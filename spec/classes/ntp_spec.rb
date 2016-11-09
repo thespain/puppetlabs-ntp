@@ -26,6 +26,10 @@ describe 'ntp' do
           it { should contain_file('/etc/ntp/step-tickers').with_mode('0644') }
         end
 
+        if f[:os]['family'] == 'Suse' && f[:os]['release']['major'] == '42'
+          it { should contain_file('/var/run/ntp/servers-netconfig').with_ensure_absent }
+        end
+
         if f[:os]['family'] == 'Suse' && f[:os]['release']['major'] == '12'
           it { should contain_file('/var/run/ntp/servers-netconfig').with_ensure_absent }
         end

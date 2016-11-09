@@ -22,7 +22,7 @@ when 'Solaris'
     packagename = 'service/network/ntp'
   end
 else
-  if fact('operatingsystem') == 'SLES' and fact('operatingsystemmajrelease') == '12'
+  if ( (fact('operatingsystem') == 'SLES' and fact('operatingsystemmajrelease') == '12') or (fact('operatingsystem') == 'OpenSuSE' and fact('operatingsystemmajrelease') == '42') )
     servicename = 'ntpd'
   else
     servicename = 'ntp'

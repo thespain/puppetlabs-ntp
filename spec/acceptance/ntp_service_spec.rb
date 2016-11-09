@@ -9,7 +9,7 @@ case fact('osfamily')
   when 'AIX'
     servicename = 'xntpd'
   else
-    if fact('operatingsystem') == 'SLES' and fact('operatingsystemmajrelease') == '12'
+    if ( (fact('operatingsystem') == 'SLES' and fact('operatingsystemmajrelease') == '12') or (fact('operatingsystem') == 'OpenSuSE' and fact('operatingsystemmajrelease') == '42') )
       servicename = 'ntpd'
     else
       servicename = 'ntp'
@@ -94,4 +94,3 @@ describe 'service is unmanaged' do
     end
   end
 end
-

@@ -53,6 +53,12 @@
       ]
     },
     {
+      "operatingsystem": "OpenSuSE",
+      "operatingsystemrelease": [
+        "42"
+      ]
+    },
+    {
       "operatingsystem": "SLES",
       "operatingsystemrelease": [
         "10 SP4",
